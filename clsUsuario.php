@@ -6,9 +6,9 @@ connect_db();
 class clsUsuario
 {
 
-  function create($nombre, $referencia)
+  function create($nombre, $direccion, $telefono, $email)
   {
-    $strSQL = "INSERT INTO `crud`.`usuario` (`nombre`, `referencia`) VALUES ('$nombre', '$referencia')";
+    $strSQL = "INSERT INTO `crud`.`usuario` (`nombre`, `direccion`, `telefono`, `email` ) VALUES ('$nombre', '$direccion', '$telefono', 'email')";
     consultar_db($strSQL);
   }
 
@@ -19,9 +19,9 @@ class clsUsuario
     return $arrDatos;
   }
 
-  function update($id, $nombre, $referencia)
+  function update($id, $nombre, $direccion, $telefono, $email)
   {
-    $strSQL = "UPDATE usuario SET nombre='$nombre', referencia='$referencia' WHERE  id= $id";
+    $strSQL = "UPDATE usuario SET nombre='$nombre', direccion='$direccion', telefono='$telefono', email='$email' WHERE  id= $id";
     consultar_db($strSQL);
   }
 

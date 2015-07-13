@@ -7,9 +7,19 @@ if ( ! empty($_POST['txtNombre'])) {
   $txtNombre = $_POST['txtNombre'];
 }
 
-if ( ! empty($_POST['txtReferencia'])) {
-  $txtReferencia = $_POST['txtReferencia'];
+if ( ! empty($_POST['txtDireccion'])){
+  $txtDireccion = $_POST['txtDireccion'];
 }
+
+if ( ! empty($_POST['txtTelefono'])) {
+  $txtTelefono = $_POST['txtTelefono'];
+}
+
+if ( ! empty($_POST['txtEmail'])){
+  $txtEmail = $_POST['txtEmail'];
+}
+
+
 
 $idRegistro = NULL;
 
@@ -25,10 +35,10 @@ switch ($strAccion) {
   case "Guardar":
 
     if (empty($idRegistro)) {
-      $objUsuario->create($txtNombre, $txtReferencia);
+      $objUsuario->create($txtNombre, $txtDireccion, $txtTelefono, $txtEmail);
     }
     else {
-      $objUsuario->update($idRegistro, $txtNombre, $txtReferencia);
+      $objUsuario->update($idRegistro, $txtNombre, $txtDireccion, $txtTelefono, $txtEmail);
     }
 
     break;
